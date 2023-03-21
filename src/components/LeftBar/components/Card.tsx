@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import {
   headline as Headline,
   paragraph as Paragraph,
@@ -26,19 +26,23 @@ export const Card: React.FC<CardProps> = ({
   activeCard,
   info,
 }) => {
-  const [valueInput, setValueInput] = useState(info);
+  const [valueInputP, setValueInputP] = useState(info);
+  const inputRef = useRef<HTMLInputElement>(null); // создаем ссылку на инпут
 
   const dispatch = useDispatch();
 
   const changeInfo = (e: ChangeEvent<HTMLInputElement>) => {
-    setValueInput(e.target.value);
+    const updatedValue = e.target.value;
+    setValueInputP(updatedValue);
+    dispatch(updateInfo({ id, valueInput: updatedValue }));
   };
 
   useEffect(() => {
-    if (valueInput) {
-      dispatch(updateInfo({ id, valueInput }));
+    if (activeCard === id && inputRef.current) {
+      inputRef.current.focus();
+      console.log("Focus");
     }
-  }, [valueInput]);
+  }, [activeCard, id]);
 
   return (
     <div
@@ -56,7 +60,8 @@ export const Card: React.FC<CardProps> = ({
       <div className={classes.text}>{name}</div>
       {activeCard === id && (
         <input
-          value={valueInput}
+          ref={inputRef}
+          value={valueInputP}
           onChange={(e) => changeInfo(e)}
           className={classes.input}
         />
