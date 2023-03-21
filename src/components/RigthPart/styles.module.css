@@ -1,0 +1,19 @@
+.container_right {
+  background: #fff;
+  padding: 30px 46px;
+  width: 500px;
+  text-align: center;
+}
+
+.button {
+  background: #4368e0;
+  border-radius: 4px;
+  color: #fff;
+  padding: 10px 30px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.img {
+  width: 200px;
+}

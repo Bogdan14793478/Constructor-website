@@ -1,0 +1,14 @@
+.container_left {
+  background: #fff;
+  padding: 29px;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 210px;
+}
+
+.wrapper_card {
+  width: 100px;
+}
