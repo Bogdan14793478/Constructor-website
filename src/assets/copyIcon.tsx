@@ -2,9 +2,10 @@ import React from "react";
 
 type Props = {
   fill?: string;
+  onClick?: () => void;
 };
 
-const copyIcon = ({ fill = "white" }: Props) => {
+const copyIcon = ({ fill = "white", onClick }: Props) => {
   return (
     <svg
       width="21"
@@ -12,6 +13,7 @@ const copyIcon = ({ fill = "white" }: Props) => {
       viewBox="0 0 21 21"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
     >
       <rect width="21" height="21" rx="2" fill="#4B97B8" />
       <path

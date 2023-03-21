@@ -13,7 +13,7 @@ export const CenterPart = () => {
     <div className={classes.container_center}>
       {blocks?.map((item: Block) => {
         return (
-          <div key={item.id} className={classes.wrapper_card}>
+          <div key={item.id * Date.now()} className={classes.wrapper_card}>
             <CardMain
               activeCard={activeCard}
               setActiveCard={setActiveCard}

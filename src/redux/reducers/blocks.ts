@@ -45,6 +45,21 @@ export const blocksReducer = (state = initial, action: any) => {
       copyBlocks4[indexBlock2] = firstBlock2;
       return { ...state, blocks: copyBlocks4 };
 
+    case ActionTypesBlocks.COPY_BLOCK:
+      const newObj = { ...action.payload };
+      const copyBlocks5 = [...state.blocks];
+      const indexEl = copyBlocks5.findIndex((item) => item.id === newObj);
+      newObj.id = Date.now();
+      copyBlocks5.splice(indexEl, 0, newObj);
+      return { ...state, blocks: copyBlocks5 };
+
+    case ActionTypesBlocks.REMOVE_BLOCK:
+      console.log(action.payload, "action.payload");
+      const removeId = action.payload;
+      const copyBlocks6 = [...state.blocks];
+      const resultBlock = copyBlocks6.filter((item) => item.id !== removeId);
+      return { ...state, blocks: resultBlock };
+
     default:
       return state;
   }

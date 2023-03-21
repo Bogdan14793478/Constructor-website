@@ -8,8 +8,10 @@ import {
 } from "../../../assets";
 import { Block } from "../../../redux/actions/interface";
 import {
+  copyBlock,
   decreasePoint,
   increasePoint,
+  removeChooseBlock,
 } from "../../../redux/actions/typeActionBlocks";
 import { RootState } from "../../../store";
 
@@ -29,23 +31,27 @@ export const ButtonBlock: React.FC<ButtonBlockProps> = ({ item }) => {
       return index + 1 < blocks.length ? true : false;
     }
     if (param === "up") {
-      console.log("work");
       const index = blocks.findIndex((item) => item.id === id);
       return index > 0 ? true : false;
     }
-    // console.log(index, "index");
-    // console.log(blocks.length, "length");
     return false;
   };
-  const handleClickArrowDown = () => {
+  const handleClickArrowDown = (): void => {
     const result = findLength(item.id, "down");
     if (result) dispatch(decreasePoint(item.id));
   };
 
-  const handleClickArrowUp = () => {
+  const handleClickArrowUp = (): void => {
     const result = findLength(item.id, "up");
-    console.log(result, "result");
     if (result) dispatch(increasePoint(item.id));
+  };
+
+  const handleClickCopyBlock = (): void => {
+    dispatch(copyBlock(item));
+  };
+
+  const removeBlock = () => {
+    dispatch(removeChooseBlock(item.id));
   };
 
   return (
@@ -55,8 +61,8 @@ export const ButtonBlock: React.FC<ButtonBlockProps> = ({ item }) => {
         <ArrowUp onClick={handleClickArrowUp} />
       </div>
       <div className={classes.functional_field}>
-        <CopyIcon />
-        <RemoveIcon />
+        <CopyIcon onClick={handleClickCopyBlock} />
+        <RemoveIcon onClick={removeBlock} />
       </div>
     </div>
   );
