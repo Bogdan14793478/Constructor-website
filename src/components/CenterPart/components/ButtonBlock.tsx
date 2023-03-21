@@ -26,13 +26,12 @@ export const ButtonBlock: React.FC<ButtonBlockProps> = ({ item }) => {
   const { blocks } = useSelector((state: RootState) => state.blocks);
 
   const findLength = (id: number, param: string): boolean => {
+    const index = blocks.findIndex((item) => item.id === id);
     if (param === "down") {
-      const index = blocks.findIndex((item) => item.id === id);
-      return index + 1 < blocks.length ? true : false;
+      return index + 1 < blocks.length;
     }
     if (param === "up") {
-      const index = blocks.findIndex((item) => item.id === id);
-      return index > 0 ? true : false;
+      return index > 0;
     }
     return false;
   };
