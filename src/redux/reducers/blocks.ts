@@ -54,7 +54,6 @@ export const blocksReducer = (state = initial, action: any) => {
       return { ...state, blocks: copyBlocks5 };
 
     case ActionTypesBlocks.REMOVE_BLOCK:
-      console.log(action.payload, "action.payload");
       const removeId = action.payload;
       const copyBlocks6 = [...state.blocks];
       const resultBlock = copyBlocks6.filter((item) => item.id !== removeId);
