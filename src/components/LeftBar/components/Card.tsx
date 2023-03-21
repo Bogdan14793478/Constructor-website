@@ -40,7 +40,6 @@ export const Card: React.FC<CardProps> = ({
   useEffect(() => {
     if (activeCard === id && inputRef.current) {
       inputRef.current.focus();
-      console.log("Focus");
     }
   }, [activeCard, id]);
 
