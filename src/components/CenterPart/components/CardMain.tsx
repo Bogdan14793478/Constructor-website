@@ -1,9 +1,9 @@
 import React from "react";
 import { Block } from "../../../redux/actions/interface";
 import { Card } from "../../LeftBar/components/Card";
+import { ButtonBlock } from "./ButtonBlock";
 
 import classes from "./styles.module.css";
-
 interface CardMainProps {
   item: Block;
   activeCard?: number;
@@ -20,7 +20,8 @@ export const CardMain: React.FC<CardMainProps> = ({
     setActiveCard(item.id);
   };
   return (
-    <div onClick={chooseCard}>
+    <div className={classes.container_main_card} onClick={chooseCard}>
+      {chooseBackground && <ButtonBlock item={item} />}
       <Card
         activeCard={activeCard}
         isActive={chooseBackground}

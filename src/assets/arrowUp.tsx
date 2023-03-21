@@ -1,10 +1,11 @@
 import React from "react";
 
 type Props = {
-  fill: string;
+  fill?: string;
+  onClick: () => void;
 };
 
-const arrowUp = ({ fill = "white" }: Props) => {
+const arrowUp = ({ fill = "white", onClick }: Props) => {
   return (
     <svg
       width="21"
@@ -12,6 +13,7 @@ const arrowUp = ({ fill = "white" }: Props) => {
       viewBox="0 0 21 21"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
     >
       <path
         fillRule="evenodd"

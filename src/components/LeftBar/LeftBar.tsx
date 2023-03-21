@@ -1,20 +1,11 @@
 import React, { useCallback } from "react";
 import { useDispatch } from "react-redux";
+import { BlockI } from "../../redux/actions/interface";
 import { addNewBlock } from "../../redux/actions/typeActionBlocks";
+import { block } from "../helpers/consts";
 import { Card } from "./components/Card";
 import classes from "./styles.module.css";
 
-interface BlockI {
-  id: number;
-  name: string;
-}
-
-const block: BlockI[] = [
-  { id: 1, name: "Headline" },
-  { id: 2, name: "Paragraph" },
-  { id: 3, name: "Button" },
-  { id: 4, name: "Image" },
-];
 export const LeftBar = () => {
   const dispatch = useDispatch();
 

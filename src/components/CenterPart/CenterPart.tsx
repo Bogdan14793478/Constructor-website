@@ -8,9 +8,10 @@ import classes from "./styles.module.css";
 export const CenterPart = () => {
   const [activeCard, setActiveCard] = useState<number>(1);
   const { blocks } = useSelector((state: RootState) => state.blocks);
+
   return (
     <div className={classes.container_center}>
-      {blocks.map((item: Block) => {
+      {blocks?.map((item: Block) => {
         return (
           <div key={item.id} className={classes.wrapper_card}>
             <CardMain

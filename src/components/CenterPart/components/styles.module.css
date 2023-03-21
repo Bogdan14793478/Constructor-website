@@ -1,2 +1,32 @@
 .container_main_card {
+  position: relative;
+}
+
+.container_button_block {
+  position: absolute;
+  right: 12px;
+  top: -27px;
+  z-index: 10;
+  display: flex;
+}
+
+.arrow_field {
+  width: 53px;
+  height: 27px;
+  background: #449cf4;
+  border-radius: 3px 3px 0px 0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.functional_field {
+  margin-left: 5px;
+  width: 53px;
+  height: 27px;
+  border-radius: 3px 3px 0px 0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #68c2e9;
 }

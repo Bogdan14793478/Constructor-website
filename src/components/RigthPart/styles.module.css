@@ -12,8 +12,31 @@
   padding: 10px 30px;
   font-weight: 500;
   font-size: 14px;
+  margin-bottom: 30px;
 }
 
 .img {
-  width: 200px;
+  width: 400px;
+  object-fit: cover;
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+
+.headline {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: #252a32;
+  margin-bottom: 30px;
+}
+
+.paragraph {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #97aacd;
+  margin-bottom: 30px;
 }

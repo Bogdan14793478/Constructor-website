@@ -13,10 +13,10 @@ export const RigthPart = () => {
         return (
           <div key={item.id}>
             {item.name === "Paragraph" && item.info !== "" && (
-              <p>{item.info}</p>
+              <p className={classes.paragraph}>{item.info}</p>
             )}
             {item.name === "Headline" && item.info !== "" && (
-              <h1>{item.info}</h1>
+              <div className={classes.headline}>{item.info}</div>
             )}
             {item.name === "Button" && item.info !== "" && (
               <button className={classes.button}>{item.info}</button>

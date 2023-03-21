@@ -1,6 +1,7 @@
 .App {
   justify-content: flex-start;
   display: flex;
+  min-height: 100vh;
 }
 
 .App-logo {

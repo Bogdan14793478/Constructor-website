@@ -1,7 +1,7 @@
 import React from "react";
 
 type Props = {
-  fill: string;
+  fill?: string;
 };
 
 const removeIcon = ({ fill = "white" }: Props) => {
